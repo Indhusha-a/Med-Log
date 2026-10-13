@@ -1,0 +1,22 @@
+# Virtual environment - never commit this, it's machine-specific and huge
+.venv/
+venv/
+
+# Python bytecode/cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Secrets - .env holds the DB password and JWT secret
+.env
+
+# Local SQLite fallback DB (used only when .env is missing)
+*.db
+*.sqlite3
+
+# Editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand */
+  --color-navy-deep: #0a1630;
+  --color-navy-dark: #101f3d;
+  --color-navy-secondary: #172b4d;
+  --color-blue-primary: #315c9b;
+  --color-blue-accent: #6496e8;
+  --color-blue-soft: #eaf1fc;
+
+  /* Neutrals */
+  --color-app-bg: #f3f5f8;
+  --color-app-bg-2: #e9edf3;
+  --color-text-primary: #182235;
+  --color-text-secondary: #66738a;
+  --color-text-muted: #8a95a7;
+  --color-border: #dfe5ed;
+  --color-divider: #e8ecf2;
+
+  /* Semantic */
+  --color-success: #2f9e63;
+  --color-success-bg: #e7f6ee;
+  --color-warning: #b4790f;
+  --color-warning-bg: #fdf2e0;
+  --color-error: #c23b3b;
+  --color-error-bg: #fbeaea;
+  --color-info: #315c9b;
+  --color-info-bg: #eaf1fc;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", "Inter", system-ui, serif;
+
+  --shadow-soft: 0 1px 2px rgba(10, 22, 48, 0.04), 0 8px 24px -8px rgba(10, 22, 48, 0.08);
+  --shadow-lifted: 0 4px 16px rgba(10, 22, 48, 0.08), 0 24px 48px -16px rgba(10, 22, 48, 0.16);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-app-bg text-text-primary font-sans antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-blue-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbar on the chat message list without hiding content */
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}

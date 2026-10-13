@@ -1,0 +1,18 @@
+# Virtual environment - never commit this, it's machine-specific and huge
+.venv/
+venv/
+
+# Python bytecode/cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Secrets - .env holds the Groq API key and the shared JWT secret
+.env
+
+# Editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

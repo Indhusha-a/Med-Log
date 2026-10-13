@@ -1,0 +1,42 @@
+# Root-level safety net. Each of backend/, ml-service/, and frontend/
+# already has its own .gitignore for anything specific to that service -
+# this one exists as a second, broader line of defense so nothing heavy
+# or secret slips in no matter where in the tree it's created from,
+# using **/ so these patterns match at any depth, not just here.
+
+# Python virtual environments and bytecode
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.pytest_cache/
+
+# Node
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.tsbuildinfo
+
+# Secrets - every service's .env holds a real credential of some kind
+# (DB password, JWT secret, or the Groq API key)
+**/.env
+!**/.env.example
+
+# Local SQLite fallback DB files
+**/*.db
+**/*.sqlite3
+
+# Logs
+**/*.log
+**/logs/
+
+# Editor/OS junk
+**/.vscode/
+**/.idea/
+**/.DS_Store
+**/Thumbs.db
+
+# The original assessment brief and planning notes - not part of the
+# shipped project, kept locally for reference only
+instructions/
